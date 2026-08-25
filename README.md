@@ -28,7 +28,8 @@ Tecnologías
 
 Objetivo
 
-El objetivo del proyecto es diseñar una plataforma de comercio electrónico para una cafetería, permitiendo presentar los productos de manera organizada y ofrecer una experiencia de navegación sencilla y atractiva.
+El objetivo de este proyecto es diseñar una pagina web para una cafeteria (Star Coffee), donde esta permita al usuario ver los distintos productos que estan disponibles, en esta pagina se presentan los productos de manera organizada para ofrecer una experiencia de navegacion sencilla y atractiva para el cliente.
+
 Autores
 
 * José Luis Fernández
