@@ -8,7 +8,7 @@ Diseño
 
 El diseño de la página fue realizado en Figma.
 
-Link de la pagina: 
+Link de la pagina: https://www.figma.com/design/DWECRU2w0VWDukgNbaIDnl/Pagina-De-Star-Coffee?node-id=0-1&t=LZXnrDs7g2UMLmXn-
 
 Funcionalidades
 
