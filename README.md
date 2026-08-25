@@ -29,7 +29,6 @@ Tecnologías
 Objetivo
 
 El objetivo del proyecto es diseñar una plataforma de comercio electrónico para una cafetería, permitiendo presentar los productos de manera organizada y ofrecer una experiencia de navegación sencilla y atractiva.
-
 Autores
 
 * José Luis Fernández
