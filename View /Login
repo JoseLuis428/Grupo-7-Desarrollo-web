@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Star Coffee - Inicio de sesión</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #e9e4de;
+            font-family: Arial, sans-serif;
+        }
+
+        .card {
+            display: flex;
+            width: 700px;
+            background-color: white;
+            border: 2px solid #6b3f1d;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .left {
+            flex: 1;
+            padding: 30px;
+        }
+
+        h1,
+        p {
+            text-align: center;
+        }
+
+        h1 {
+            color: #2b1a10;
+        }
+
+        p {
+            color: #555;
+            font-size: 14px;
+        }
+
+        label {
+            font-weight: bold;
+            font-size: 14px;
+            color: #2b1a10;
+        }
+
+        input,
+        button {
+            width: 100%;
+            padding: 12px;
+            font-size: 15px;
+            border-radius: 8px;
+            box-sizing: border-box;
+        }
+
+        input {
+            border: 1px solid #ccc;
+            margin-top: 5px;
+            margin-bottom: 15px;
+        }
+
+        .btn-cafe {
+            background-color: #4a2c17;
+            color: white;
+            border: none;
+        }
+
+        .separador {
+            text-align: center;
+            margin: 15px 0;
+            color: #999;
+        }
+
+        .btn-google {
+            background-color: white;
+            border: 1px solid #4a2c17;
+            color: #2b1a10;
+        }
+
+        .registro {
+            text-align: center;
+            font-size: 13px;
+            margin-top: 15px;
+        }
+
+        .right {
+            flex: 1;
+            background-image: url('https://cdn.shopify.com/s/files/1/0022/1393/7252/articles/why-everyone-should-drink-one-cup-of-coffee-a-day-137660_2048x2048_crop_center.jpg.webp?v=1628382750');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+
+        <div class="left">
+            <h1>Inicio de sesión</h1>
+            <p>Inicia sesión con tu cuenta de <b>Star Coffee</b></p>
+
+            <label>Correo electrónico</label>
+            <input type="text" placeholder="@gmail.com">
+
+            <label>Contraseña</label>
+            <input type="password" placeholder="Introduce tu contraseña">
+
+            <button class="btn-cafe">Iniciar sesión</button>
+
+            <div class="separador">O</div>
+
+            <button class="btn-google">Continuar con Google</button>
+
+            <p class="registro">¿No tienes una cuenta? <b>Regístrate aquí</b></p>
+        </div>
+
+        <div class="right"></div>
+
+    </div>
+
+</body>
+
+</html>
