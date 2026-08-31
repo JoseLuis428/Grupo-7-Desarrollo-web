@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Star Coffee - Carrito</title>
+<style>
+  body {
+    margin: 0;
+    background-color: #f2efec;
+    font-family: Arial, sans-serif;
+    padding: 30px 60px;
+    box-sizing: border-box;
+  }
+
+  .breadcrumb {
+    font-size: 13px;
+    color: #888;
+    margin-bottom: 8px;
+  }
+
+  h2 {
+    color: #2b1a10;
+    margin: 0 0 25px 0;
+  }
+
+  .contenido {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+  }
+
+  .columna-izq {
+    flex: 2.2;
+  }
+
+  .columna-der {
+    flex: 1;
+  }
+
+  .producto {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+  }
+
+  .producto img {
+    width: 70px;
+    height: 70px;
+    border-radius: 8px;
+    object-fit: cover;
+  }
+
+  .info-producto {
+    flex: 1;
+  }
+
+  .info-producto h4 {
+    margin: 0 0 4px 0;
+    color: #2b1a10;
+  }
+
+  .info-producto p {
+    margin: 0;
+    font-size: 12px;
+    color: #777;
+  }
+
+  .cantidad {
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 6px 10px;
+    font-size: 13px;
+    background-color: #fafafa;
+  }
+
+  .precio {
+    font-weight: bold;
+    color: #2b1a10;
+    width: 70px;
+    text-align: right;
+  }
+
+  .botones {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0 35px 0;
+  }
+
+  .btn-seguir {
+    width: auto;
+    padding: 12px 20px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    color: #333;
+  }
+
+  .btn-pagar {
+    width: auto;
+    padding: 12px 20px;
+    background-color: #4a2c17;
+    color: white;
+    border: none;
+    border-radius: 8px;
+  }
+
+  .recomendaciones h4 {
+    color: #2b1a10;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+  }
+
+  .lista-recomendaciones {
+    display: flex;
+    gap: 15px;
+  }
+
+  .rec-item {
+    flex: 1;
+  }
+
+  .rec-item img {
+    width: 100%;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  .rec-item p {
+    text-align: center;
+    font-size: 13px;
+    margin-top: 6px;
+    color: #2b1a10;
+  }
+
+  .resumen, .cupon {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+  }
+
+  .resumen {
+    margin-bottom: 20px;
+  }
+
+  .resumen h4 {
+    margin-top: 0;
+    color: #2b1a10;
+  }
+
+  .linea {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    margin-bottom: 12px;
+    color: #555;
+  }
+
+  .linea.total {
+    font-weight: bold;
+    color: #2b1a10;
+    border-top: 1px solid #ddd;
+    padding-top: 12px;
+    font-size: 16px;
+  }
+
+  .btn-pago-resumen {
+    width: 100%;
+    padding: 12px;
+    background-color: #4a2c17;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    margin-top: 10px;
+  }
+
+  .cupon h4 {
+    margin-top: 0;
+    color: #2b1a10;
+    font-size: 14px;
+  }
+
+  .fila-cupon {
+    display: flex;
+    gap: 8px;
+  }
+
+  .fila-cupon input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+  }
+
+  .fila-cupon button {
+    padding: 10px 14px;
+    background-color: white;
+    border: 1px solid #a0522d;
+    color: #a0522d;
+    border-radius: 6px;
+  }
+</style>
+</head>
+<body>
+
+  <div class="breadcrumb">Inicio &gt; Tu carrito de la compra (2 artículos)</div>
+  <h2>Tu carrito de la compra (2 artículos)</h2>
+
+  <div class="contenido">
+
+    <div class="columna-izq">
+
+      <div class="producto">
+        <img src="https://images.unsplash.com/photo-1509785307050-d4066910ec1e?w=200" alt="Café Americano">
+        <div class="info-producto">
+          <h4>Café Americano</h4>
+          <p>Café 100% Colombiano tamaño mediano</p>
+        </div>
+        <div class="cantidad">- 1 +</div>
+        <div class="precio">$6.000</div>
+      </div>
+
+      <div class="producto">
+        <img src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=200" alt="Capuchino">
+        <div class="info-producto">
+          <h4>Capuchino</h4>
+          <p>Café con leche espumosa y un toque de sabor</p>
+        </div>
+        <div class="cantidad">- 1 +</div>
+        <div class="precio">$6.000</div>
+      </div>
+
+      <div class="botones">
+        <button class="btn-seguir">Seguir comprando</button>
+        <button class="btn-pagar">Continuar con el pago</button>
+      </div>
+
+      <div class="recomendaciones">
+        <h4>Recomendaciones para ti</h4>
+        <div class="lista-recomendaciones">
+          <div class="rec-item">
+            <img src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=300" alt="Café Espress">
+            <p>Café Espress</p>
+          </div>
+          <div class="rec-item">
+            <img src="https://images.unsplash.com/photo-1561047029-3000c68339ca?w=300" alt="Latte">
+            <p>Latte</p>
+          </div>
+          <div class="rec-item">
+            <img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?w=300" alt="Café Colombiano">
+            <p>Café Colombiano</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="columna-der">
+
+      <div class="resumen">
+        <h4>Resumen del pago</h4>
+        <div class="linea">
+          <span>Subtotal (2 artículos)</span>
+          <span>$12.000</span>
+        </div>
+        <div class="linea">
+          <span>Envío</span>
+          <span>$5.000</span>
+        </div>
+        <div class="linea total">
+          <span>Total</span>
+          <span>$17.000</span>
+        </div>
+        <button class="btn-pago-resumen">Continuar con el pago</button>
+      </div>
+
+      <div class="cupon">
+        <h4>¿Tienes un cupón?</h4>
+        <div class="fila-cupon">
+          <input type="text" placeholder="Código de descuento">
+          <button>Aplicar</button>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>
