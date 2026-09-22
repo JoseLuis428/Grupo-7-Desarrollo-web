@@ -3,15 +3,6 @@ Star Coffee — Sprint 2
 Maquetación estática en HTML + CSS de las páginas principales del sitio Star Coffee, previa a la 
 implementación del backend con Node.js/Express y EJS (Sprint 3).
 
-Estructura
-
-Spring 2/
-├── index.html      Página de inicio
-├── home.html       Home con secciones de productos
-├── producto.html   Detalle de un producto (galería, tabs, tamaño/cantidad)
-├── carrito.html    Carrito de compras (resumen de pago)
-└── registro.html   Formulario de registro
-
 Qué se hizo en el Sprint 2
 
 - Se diseñaron y maquetaron las páginas principales del sitio en HTML puro, con estilos en línea 
