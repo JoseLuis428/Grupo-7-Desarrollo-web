@@ -1,0 +1,9 @@
+<div class="tarjeta">
+  <img src="<%= p.imagen %>" alt="<%= p.nombre %>">
+  <h3><a href="/productos/<%= p.id %>"><%= p.nombre %></a></h3>
+  <p><%= p.descripcion %></p>
+  <p class="precio"><%= formatoPrecio(p.precio) %></p>
+  <form action="/carrito/agregar/<%= p.id %>" method="POST">
+    <button type="submit" class="boton">Agregar al carrito</button>
+  </form>
+</div>

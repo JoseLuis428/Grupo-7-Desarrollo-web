@@ -1,0 +1,33 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header', { mostrarNav: false }) %>
+
+<div class="formulario centrado">
+  <h2>Crea tu cuenta de Star Coffee</h2>
+
+  <% if (error) { %>
+    <p class="error"><%= error %></p>
+  <% } %>
+
+  <form action="/registro" method="POST">
+    <label for="nombre">Nombre</label>
+    <input type="text" id="nombre" name="nombre">
+
+    <label for="apellidos">Apellidos</label>
+    <input type="text" id="apellidos" name="apellidos">
+
+    <label for="correo">Correo electrónico</label>
+    <input type="text" id="correo" name="correo">
+
+    <label for="contrasena">Contraseña</label>
+    <input type="password" id="contrasena" name="contrasena">
+
+    <label for="confirmar">Confirmar contraseña</label>
+    <input type="password" id="confirmar" name="confirmar">
+
+    <button type="submit" class="boton">Registrarme</button>
+  </form>
+
+  <p>¿Ya tienes una cuenta? <a href="/login"><b>Inicia sesión aquí</b></a></p>
+</div>
+
+<%- include('../partials/footer') %>

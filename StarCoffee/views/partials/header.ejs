@@ -1,0 +1,22 @@
+<body>
+
+<%
+  // Si la vista no dice nada, el menú se muestra.
+  // Las vistas de login y registro lo mandan en false para ocultarlo.
+  var verNav = (typeof mostrarNav === 'undefined') ? true : mostrarNav;
+%>
+
+<header class="<%= verNav ? '' : 'sin-nav' %>">
+  <a href="<%= verNav ? '/' : '/login' %>" class="logo">&#9733; Star Coffee</a>
+
+  <% if (verNav) { %>
+    <nav>
+      <a href="/">Inicio</a>
+      <a href="/productos">Menú</a>
+      <a href="/carrito">Carrito</a>
+      <a href="/salir">Cerrar sesión</a>
+    </nav>
+  <% } %>
+</header>
+
+<main>

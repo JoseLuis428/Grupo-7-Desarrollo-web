@@ -1,0 +1,28 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+
+<div class="titulo-fila">
+  <h2>Nuestros productos</h2>
+  <a href="/productos/nuevo" class="boton">+ Nuevo producto</a>
+</div>
+
+<% if (productos.length === 0) { %>
+  <p>No hay productos todavía.</p>
+<% } %>
+
+<div class="grid">
+  <% productos.forEach(function (p) { %>
+    <div class="tarjeta">
+      <img src="<%= p.imagen %>" alt="<%= p.nombre %>">
+      <h3><%= p.nombre %></h3>
+      <p><%= p.descripcion %></p>
+      <p class="precio"><%= formatoPrecio(p.precio) %></p>
+      <div class="acciones-tarjeta">
+        <a href="/productos/<%= p.id %>" class="boton-claro">Ver</a>
+        <a href="/productos/<%= p.id %>/editar" class="boton-claro">Editar</a>
+      </div>
+    </div>
+  <% }); %>
+</div>
+
+<%- include('../partials/footer') %>

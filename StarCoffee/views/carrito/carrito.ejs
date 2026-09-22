@@ -1,0 +1,108 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+
+<a href="/productos" class="volver">&#10094; Seguir comprando</a>
+
+<h2 class="titulo-carrito">
+  Tu carrito de la compra
+  <% if (totalArticulos > 0) { %>(<%= totalArticulos %> artículos)<% } %>
+</h2>
+
+<% if (items.length === 0) { %>
+
+  <div class="carrito-vacio">
+    <p>Tu carrito está vacío.</p>
+    <a href="/productos" class="boton">Ver productos</a>
+  </div>
+
+<% } else { %>
+
+  <div class="contenido-carrito">
+
+    <!-- ---------- Columna izquierda: productos ---------- -->
+    <div class="columna-izq">
+
+      <% items.forEach(function (item) { %>
+        <div class="item-carrito">
+          <img src="<%= item.imagen %>" alt="<%= item.nombre %>">
+
+          <div class="item-info">
+            <h4><%= item.nombre %></h4>
+            <p>
+              <%= item.descripcion %>
+              <% if (item.tamano) { %> &middot; Tamaño <%= item.tamano %><% } %>
+            </p>
+          </div>
+
+          <form action="/carrito/cantidad/<%= item.id %>" method="POST" class="cantidad">
+            <button type="submit" name="accion" value="restar">-</button>
+            <span class="valor-cantidad"><%= item.cantidad %></span>
+            <button type="submit" name="accion" value="sumar">+</button>
+          </form>
+
+          <div class="precio precio-item"><%= formatoPrecio(item.subtotal) %></div>
+
+          <form action="/carrito/quitar/<%= item.id %>" method="POST">
+            <button type="submit" class="boton-rojo">Quitar</button>
+          </form>
+        </div>
+      <% }); %>
+
+      <div class="botones-carrito">
+        <a href="/productos" class="boton-claro">Seguir comprando</a>
+        <a href="#" class="boton">Continuar con el pago</a>
+      </div>
+
+      <% if (recomendaciones.length > 0) { %>
+        <div class="recomendaciones">
+          <h4>Recomendaciones para ti</h4>
+          <div class="lista-recomendaciones">
+            <% recomendaciones.forEach(function (r) { %>
+              <a href="/productos/<%= r.id %>" class="rec-item">
+                <img src="<%= r.imagen %>" alt="<%= r.nombre %>">
+                <p><%= r.nombre %></p>
+              </a>
+            <% }); %>
+          </div>
+        </div>
+      <% } %>
+
+    </div>
+
+    <!-- ---------- Columna derecha: resumen y cupón ---------- -->
+    <div class="columna-der">
+
+      <div class="resumen">
+        <h4>Resumen del pago</h4>
+
+        <div class="linea">
+          <span>Subtotal (<%= totalArticulos %> artículos)</span>
+          <span><%= formatoPrecio(subtotal) %></span>
+        </div>
+        <div class="linea">
+          <span>Envío</span>
+          <span><%= formatoPrecio(envio) %></span>
+        </div>
+        <div class="linea total">
+          <span>Total</span>
+          <span><%= formatoPrecio(total) %></span>
+        </div>
+
+        <a href="#" class="boton boton-ancho">Continuar con el pago</a>
+      </div>
+
+      <div class="cupon">
+        <h4>¿Tienes un cupón?</h4>
+        <div class="fila-cupon">
+          <input type="text" placeholder="Código de descuento">
+          <button type="button">Aplicar</button>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+<% } %>
+
+<%- include('../partials/footer') %>

@@ -1,0 +1,133 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+
+<a href="/productos" class="volver">&#10094; Volver</a>
+
+<div class="detalle">
+
+  <!-- ---------- Columna izquierda: imágenes y pestañas ---------- -->
+  <div class="detalle-izq">
+
+    <div class="imagen-principal">
+      <img id="imagen-grande" src="<%= producto.imagen %>" alt="<%= producto.nombre %>">
+    </div>
+
+    <div class="miniaturas">
+      <img src="<%= producto.imagen %>" alt="Miniatura de <%= producto.nombre %>"
+           class="activa" onclick="cambiarImagen(this)">
+      <% relacionados.slice(0, 2).forEach(function (r) { %>
+        <img src="<%= r.imagen %>" alt="Miniatura de <%= r.nombre %>" onclick="cambiarImagen(this)">
+      <% }); %>
+    </div>
+
+    <div class="tabs">
+      <div class="tab activo" onclick="cambiarTab(this, 'tab-descripcion')">Descripción</div>
+      <div class="tab" onclick="cambiarTab(this, 'tab-informacion')">Información adicional</div>
+    </div>
+
+    <div class="tab-contenido" id="tab-descripcion">
+      <%= producto.descripcion %>
+      Preparado con granos seleccionados de la mejor calidad, ideal para acompañar tu día con energía y bienestar.
+    </div>
+
+    <div class="tab-contenido oculto" id="tab-informacion">
+      Categoría: <%= producto.categoria || 'general' %><br>
+      Presentación: pequeño (180 ml), mediano (250 ml) y grande (350 ml).<br>
+      Disponible para consumo en el local o para llevar.
+    </div>
+
+  </div>
+
+  <!-- ---------- Columna derecha: información y compra ---------- -->
+  <div class="detalle-der">
+
+    <h1><%= producto.nombre %></h1>
+
+    <div class="rating">&#9733;&#9733;&#9733;&#9733;&#9733; <span>4.8 (125 reseñas)</span></div>
+
+    <p class="precio precio-grande"><%= formatoPrecio(producto.precio) %></p>
+
+    <p class="descripcion"><%= producto.descripcion %></p>
+
+    <form action="/carrito/agregar/<%= producto.id %>" method="POST">
+
+      <h4>Tamaño</h4>
+      <div class="tamanos">
+        <div class="tamano" onclick="elegirTamano(this, 'Pequeño')">Pequeño<br>180 ml</div>
+        <div class="tamano activo" onclick="elegirTamano(this, 'Mediano')">Mediano<br>250 ml</div>
+        <div class="tamano" onclick="elegirTamano(this, 'Grande')">Grande<br>350 ml</div>
+      </div>
+      <input type="hidden" name="tamano" id="tamano" value="Mediano">
+
+      <h4>Cantidad</h4>
+      <div class="cantidad-selector">
+        <button type="button" onclick="cambiarCantidad(-1)">-</button>
+        <div class="valor" id="valor-cantidad">1</div>
+        <button type="button" onclick="cambiarCantidad(1)">+</button>
+      </div>
+      <input type="hidden" name="cantidad" id="cantidad" value="1">
+
+      <button type="submit" class="boton boton-ancho">Agregar al carrito</button>
+    </form>
+
+    <p class="pago-seguro">Pago 100% seguro</p>
+
+    <p class="fila-acciones">
+      <a href="/productos/<%= producto.id %>/editar" class="boton-claro">Editar producto</a>
+    </p>
+
+  </div>
+
+</div>
+
+<!-- ---------- Recomendaciones ---------- -->
+<% if (relacionados.length > 0) { %>
+  <div class="recomendaciones">
+    <h4>Recomendaciones para ti</h4>
+    <div class="lista-recomendaciones">
+      <% relacionados.forEach(function (r) { %>
+        <a href="/productos/<%= r.id %>" class="rec-item">
+          <img src="<%= r.imagen %>" alt="<%= r.nombre %>">
+          <p><%= r.nombre %></p>
+        </a>
+      <% }); %>
+    </div>
+  </div>
+<% } %>
+
+<script>
+  // Cambia la imagen grande al hacer clic en una miniatura
+  function cambiarImagen(miniatura) {
+    document.getElementById('imagen-grande').src = miniatura.src;
+    document.querySelectorAll('.miniaturas img').forEach(function (img) {
+      img.classList.remove('activa');
+    });
+    miniatura.classList.add('activa');
+  }
+
+  // Cambia entre "Descripción" e "Información adicional"
+  function cambiarTab(tab, idContenido) {
+    document.querySelectorAll('.tab').forEach(function (t) { t.classList.remove('activo'); });
+    document.querySelectorAll('.tab-contenido').forEach(function (c) { c.classList.add('oculto'); });
+    tab.classList.add('activo');
+    document.getElementById(idContenido).classList.remove('oculto');
+  }
+
+  // Selecciona el tamaño y lo guarda en el campo oculto
+  function elegirTamano(elemento, nombre) {
+    document.querySelectorAll('.tamano').forEach(function (t) { t.classList.remove('activo'); });
+    elemento.classList.add('activo');
+    document.getElementById('tamano').value = nombre;
+  }
+
+  // Suma o resta la cantidad (mínimo 1)
+  function cambiarCantidad(cambio) {
+    const campo = document.getElementById('cantidad');
+    let cantidad = parseInt(campo.value) + cambio;
+    if (cantidad < 1) cantidad = 1;
+    campo.value = cantidad;
+    document.getElementById('valor-cantidad').textContent = cantidad;
+  }
+</script>
+
+<%- include('../partials/footer') %>
