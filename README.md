@@ -17,7 +17,7 @@ Prototipo en Figma
 
 También se realizó el diseño visual y prototipo de la página web de **Star Coffee** utilizando Figma.
 
-Diseño en Figma (https://www.figma.com/design/DWECRU2w0VWDukgNbaIDnl/Pagina-De-Star-Coffee?node-id=0-1&t=LZXnrDs7g2UMLmXn-0)
+[Diseño en Figma] (https://www.figma.com/design/DWECRU2w0VWDukgNbaIDnl/Pagina-De-Star-Coffee?node-id=0-1&t=NfKS2rCVWAZSXCpu-1)
 
 Descripción
 
