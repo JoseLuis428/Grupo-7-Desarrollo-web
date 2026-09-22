@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f5f2ee;
+            color: #2b1a10;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 40px;
+            background-color: white;
+            border-bottom: 2px solid #4a2c17;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .logo img {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+        }
+
+        .buscador {
+            padding: 8px 15px;
+            border-radius: 20px;
+            border: 1px solid #ccc;
+            width: 350px;
+        }
+
+        nav {
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #2b1a10;
+            font-size: 14px;
+        }
+
+        .hero {
+            position: relative;
+            margin: 20px 40px;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .hero img {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .hero-texto {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 50%;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .hero-texto h1 {
+            font-size: 36px;
+            margin: 0 0 10px 0;
+        }
+
+        .hero-texto p {
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .botones {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn-cafe {
+            background-color: #4a2c17;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .btn-blanco {
+            background-color: rgba(255, 255, 255, 0.6);
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        section {
+            padding: 0 40px;
+            margin-bottom: 35px;
+        }
+
+        section h2 {
+            margin-bottom: 15px;
+        }
+
+        .categorias {
+            display: flex;
+            gap: 20px;
+        }
+
+        .categoria {
+            border: 1px solid #ccc;
+            border-radius: 25px;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background-color: white;
+        }
+
+        .productos {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .tarjeta {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .tarjeta img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .tarjeta-info {
+            padding: 12px;
+        }
+
+        .tarjeta-info h3 {
+            margin: 0 0 5px 0;
+            font-size: 16px;
+        }
+
+        .tarjeta-info p {
+            margin: 0 0 8px 0;
+            font-size: 13px;
+            color: #555;
+        }
+
+        .precio {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .tarjeta-info button {
+            width: 100%;
+            background-color: #4a2c17;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .promo {
+            background-color: #2b1a10;
+            color: white;
+            border-radius: 15px;
+            padding: 30px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .promo-texto h2 {
+            font-size: 28px;
+            margin: 0 0 10px 0;
+        }
+
+        .promo-texto .precio-promo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .promo-texto .antes {
+            text-decoration: line-through;
+            color: #ccc;
+            font-size: 14px;
+        }
+
+        .promo img {
+            width: 300px;
+            border-radius: 10px;
+        }
+
+        footer {
+            background-color: #e9e4de;
+            padding: 30px 40px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        footer h2 {
+            margin-top: 0;
+        }
+
+        .footer-iconos {
+            display: flex;
+            gap: 40px;
+        }
+
+        .footer-iconos div {
+            text-align: center;
+            font-size: 13px;
+            max-width: 150px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="https://placehold.co/45x45/4a2c17/fff?text=SC" alt="logo">
+            STAR COFFEE
+        </div>
+        <input class="buscador" type="text" placeholder="Buscar bebidas, alimentos...">
+        <nav>
+            <a href="#">Inicio</a>
+            <a href="#">Carrito</a>
+            <a href="#">Menú</a>
+            <a href="#">Perfil</a>
+            <a href="#">Cerrar sesión</a>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1200" alt="cafe">
+        <div class="hero-texto">
+            <h1>El mejor café,<br>directo a tu taza</h1>
+            <p>Descubre cafés colombianos, internacionales y artesanales seleccionados para los amantes del buen
+                café.</p>
+            <div class="botones">
+                <button class="btn-cafe">Comprar Ahora</button>
+                <button class="btn-blanco">Conoce nuestros cafés</button>
+            </div>
+        </div>
+    </div>
+
+    <section>
+        <h2>Categorías</h2>
+        <div class="categorias">
+            <div class="categoria">☕ Cafés</div>
+            <div class="categoria">🥤 Bebidas Frías</div>
+            <div class="categoria">🥐 Repostería</div>
+            <div class="categoria">🥪 Alimentos</div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Recomendados para ti</h2>
+        <div class="productos">
+            <div class="tarjeta">
+                <img src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=400" alt="cappuccino">
+                <div class="tarjeta-info">
+                    <h3>Cappuccino De Café</h3>
+                    <p>Clasico y cremoso.</p>
+                    <div class="precio">$ 10.900</div>
+                    <button>Agregar al carrito</button>
+                </div>
+            </div>
+            <div class="tarjeta">
+                <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?w=400" alt="frappe">
+                <div class="tarjeta-info">
+                    <h3>Caramel Frappé</h3>
+                    <p>Cremoso y con helado.</p>
+                    <div class="precio">$ 13.900</div>
+                    <button>Agregar al carrito</button>
+                </div>
+            </div>
+            <div class="tarjeta">
+                <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=400" alt="torta">
+                <div class="tarjeta-info">
+                    <h3>Torta de Chocolate</h3>
+                    <p>fresas y chocolate.</p>
+                    <div class="precio">$ 9.500</div>
+                    <button>Agregar al carrito</button>
+                </div>
+            </div>
+            <div class="tarjeta">
+                <img src="https://images.unsplash.com/photo-1553909489-cd47e0907980?w=400" alt="sandwich">
+                <div class="tarjeta-info">
+                    <h3>Sándwich Mixto</h3>
+                    <p>sabores inolvidables.</p>
+                    <div class="precio">$ 16.500</div>
+                    <button>Agregar al carrito</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Más vendidos 🔥</h2>
+        <div class="productos">
+            <div class="tarjeta">
+                <img src="https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=400" alt="pastel">
+                <div class="tarjeta-info">
+                    <h3>Pastel de Nutella</h3>
+                    <p>Clasico y cremoso.</p>
+                    <div class="precio">$ 10.000</div>
+                    <button>Agregar al carrito</button>
+                </div>
+            </div>
+            <div class="tarjeta">
+                <img src="https://images.unsplash.com/photo-1541658016709-82535e94bc69?w=400" alt="frappe fluck">
+                <div class="tarjeta-info">
+                    <h3>Frappé fluck</h3>
+                    <p>con ships explosivos.</p>
+                    <div class="precio">$ 11.900</div>
+                    <button>Agregar al carrito</button>
+                </div>
+            </div>
+            <div class="tarjeta">
+                <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=400" alt="pastel fresas">
+                <div class="tarjeta-info">
+                    <h3>Pastel De Fresas Y Crema</h3>
+                    <p>Cremoso y jugoso.</p>
+                    <div class="precio">$ 18.900</div>
+                    <button>Agregar al carrito</button>
+                </div>
+            </div>
+            <div class="tarjeta">
+                <img src="https://images.unsplash.com/photo-1534778101976-62847782c213?w=400" alt="cappuccino vainilla">
+                <div class="tarjeta-info">
+                    <h3>Cappuccino De Vainilla</h3>
+                    <p>Cremoso y jugoso.</p>
+                    <div class="precio">$ 10.900</div>
+                    <button>Agregar al carrito</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="promo">
+            <div class="promo-texto">
+                <h2>Promoción de la semana ✨</h2>
+                <p>2 Frappés + 1 porción de torta</p>
+                <div class="precio-promo">$ 28.900</div>
+                <div class="antes">Antes: $ 33.300</div>
+                <br>
+                <button class="btn-cafe">Comprar ahora</button>
+            </div>
+            <img src="https://images.unsplash.com/photo-1497515114629-f71d768fd07c?w=500" alt="frappes">
+        </div>
+    </section>
+
+    <section>
+        <h2>Nuevos en Star Coffee ⚡</h2>
+        <div class="productos">
+            <div class="tarjeta">
+                <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=400" alt="croissant">
+                <div class="tarjeta-info">
+                    <h3>Croissant de Almendras</h3>
+                    <p>Clasico y cremoso.</p>
+                    <div class="precio">$ 7.900</div>
+                    <button>Agregar al carrito</button>
+                </div>
+            </div>
+            <div class="tarjeta">
+                <img src="https://images.unsplash.com/photo-1553530666-ba11a7da3888?w=400" alt="frappe fresa">
+                <div class="tarjeta-info">
+                    <h3>Frappé de Fresa</h3>
+                    <p>con ships explosivos.</p>
+                    <div class="precio">$ 11.900</div>
+                    <button>Agregar al carrito</button>
+                </div>
+            </div>
+            <div class="tarjeta">
+                <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=400" alt="brownie">
+                <div class="tarjeta-info">
+                    <h3>Brownie de Chocolate</h3>
+                    <p>Cremoso y jugoso.</p>
+                    <div class="precio">$ 18.900</div>
+                    <button>Agregar al carrito</button>
+                </div>
+            </div>
+            <div class="tarjeta">
+                <img src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=400" alt="cappuccino vainilla 2">
+                <div class="tarjeta-info">
+                    <h3>Cappuccino De Vainilla</h3>
+                    <p>Cremoso y jugoso.</p>
+                    <div class="precio">$ 10.900</div>
+                    <button>Agregar al carrito</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div>
+            <h2>Star Coffee ☕</h2>
+            <p><b>Teléfono:</b><br>3209007999</p>
+            <p><b>Dirección:</b><br>Centro comercial SanGil<br>Plaza local 420</p>
+        </div>
+        <div class="footer-iconos">
+            <div>
+                🚚
+                <p><b>Entrega rápida</b><br>Recibe tu pedido sin complicaciones.</p>
+            </div>
+            <div>
+                🔒
+                <p><b>Pago seguro</b><br>Diferentes métodos de pago.</p>
+            </div>
+            <div>
+                ❤️
+                <p><b>Hecho para ti</b><br>Preparados con dedicación.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

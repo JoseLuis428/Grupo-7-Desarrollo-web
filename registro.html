@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Star Coffee - Registro</title>
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #e9e4de;
+            font-family: Arial, sans-serif;
+            padding: 30px 0;
+            box-sizing: border-box;
+        }
+
+        .card {
+            width: 420px;
+            background-color: white;
+            border: 2px solid #6b3f1d;
+            border-radius: 20px;
+            padding: 30px;
+        }
+
+        .flecha {
+            font-size: 20px;
+            color: #2b1a10;
+        }
+
+        h1,
+        p {
+            text-align: center;
+        }
+
+        h1 {
+            color: #2b1a10;
+            margin-top: 0;
+        }
+
+        p {
+            color: #555;
+            font-size: 14px;
+        }
+
+        .fila {
+            display: flex;
+            gap: 10px;
+        }
+
+        input,
+        button {
+            width: 100%;
+            padding: 12px;
+            font-size: 15px;
+            border-radius: 8px;
+            box-sizing: border-box;
+        }
+
+        input {
+            border: 1px solid #ccc;
+            margin-top: 5px;
+            margin-bottom: 15px;
+        }
+
+        .btn-cafe {
+            background-color: #4a2c17;
+            color: white;
+            border: none;
+        }
+
+        .separador {
+            text-align: center;
+            margin: 15px 0;
+            color: #999;
+        }
+
+        .btn-google {
+            background-color: white;
+            border: 1px solid #4a2c17;
+            color: #2b1a10;
+        }
+
+        .registro {
+            text-align: center;
+            font-size: 13px;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+
+        <div class="flecha">&#10094;</div>
+
+        <h1>Crea tu cuenta de Star Coffee</h1>
+        <p>Completa el formulario para registrarte</p>
+
+        <div class="fila">
+            <input type="text" placeholder="Nombre">
+            <input type="text" placeholder="Apellidos">
+        </div>
+
+        <input type="text" placeholder="Correo electrónico">
+
+        <input type="password" placeholder="Contraseña">
+
+        <input type="password" placeholder="Confirmar contraseña">
+
+        <button class="btn-cafe">Registrarme</button>
+
+        <div class="separador">O</div>
+
+        <button class="btn-google">Registrarme con Google</button>
+
+        <p class="registro">¿Ya tienes una cuenta? <b>Inicia sesión aquí</b></p>
+
+    </div>
+
+</body>
+
+</html>
