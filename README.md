@@ -21,4 +21,4 @@ Diseño en Figma (https://www.figma.com/design/DWECRU2w0VWDukgNbaIDnl/Pagina-De-
 
 Descripción
 
-El Sprint 1 corresponde a la etapa de **planificación y diseño del proyecto. En esta fase se definió la estructura, distribución de los elementos y apariencia inicial de la página web antes de comenzar con su desarrollo.
+El Sprint 1 corresponde a la etapa de planificación y diseño del proyecto. En esta fase se definió la estructura, distribución de los elementos y apariencia inicial de la página web antes de comenzar con su desarrollo.
