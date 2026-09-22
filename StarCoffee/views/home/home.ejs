@@ -1,0 +1,50 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+
+<div class="banner">
+  <div>
+    <h1>El mejor café, directo a tu taza</h1>
+    <p>Descubre cafés colombianos, internacionales y artesanales seleccionados para los amantes del buen café.</p>
+    <a href="/productos" class="boton">Comprar ahora</a>
+    <a href="/productos?categoria=cafes" class="boton-claro">Conoce nuestros cafés</a>
+  </div>
+  <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600" alt="Taza de café">
+</div>
+
+<h2>Categorías</h2>
+<div class="categorias">
+  <a href="/productos?categoria=cafes" class="boton-claro">&#9749; Cafés</a>
+  <a href="/productos?categoria=frias" class="boton-claro">&#129380; Bebidas frías</a>
+  <a href="/productos?categoria=reposteria" class="boton-claro">&#129360; Repostería</a>
+  <a href="/productos?categoria=alimentos" class="boton-claro">&#129386; Alimentos</a>
+</div>
+
+<h2>Recomendados para ti</h2>
+<div class="grid">
+  <% recomendados.forEach(function (p) { %>
+    <%- include('../partials/tarjeta', { p: p }) %>
+  <% }); %>
+</div>
+
+<h2>Más vendidos</h2>
+<div class="grid">
+  <% masVendidos.forEach(function (p) { %>
+    <%- include('../partials/tarjeta', { p: p }) %>
+  <% }); %>
+</div>
+
+<div class="promo">
+  <p>Promoción de la semana</p>
+  <h2>2 Frappés + 1 porción de torta</h2>
+  <p class="precio-promo">$28.900 <small>Antes: <s>$33.300</s></small></p>
+  <a href="/productos" class="boton-claro">Comprar ahora</a>
+</div>
+
+<h2>Nuevos en Star Coffee</h2>
+<div class="grid">
+  <% nuevos.forEach(function (p) { %>
+    <%- include('../partials/tarjeta', { p: p }) %>
+  <% }); %>
+</div>
+
+<%- include('../partials/footer') %>
