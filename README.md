@@ -1,41 +1,32 @@
-Star Coffee
+Retrospectiva – Proyecto Coffee Star
 
-Descripción
+Comenzar a hacer
+- Organizarnos mejor antes de empezar cada parte del diseño.
+- Tener más claras las ideas de lo que queremos poner en la página.
+- Repartir mejor las tareas entre todos.
 
-Star Coffee es un proyecto de diseño de una página web para una cafetería. El proyecto presenta una interfaz moderna y sencilla para que los usuarios puedan visualizar los productos, consultar sus detalles y realizar compras.
+Hacer más
+- Probar más diseños y diferentes ideas para la página.
+- Comunicarnos más entre nosotros para saber cómo va el trabajo.
+- Revisar más seguido cómo está quedando la página.
 
-Diseño
+Continuar haciendo
+- Seguir aportando ideas entre todos.
+- Ayudarnos cuando alguno tenga problemas con el diseño.
+- Mantener el buen trabajo en equipo.
+- Seguir buscando que la página de Coffee Star se vea llamativa y fácil de usar.
 
-El diseño de la página fue realizado en Figma.
+Hacer menos
+- Cambiar tanto de idea cuando ya tenemos un diseño avanzado.
+- Dejar algunas cosas para última hora.
+- Hacer cambios innecesarios que terminan atrasando el trabajo.
 
-Link de la pagina: https://www.figma.com/design/DWECRU2w0VWDukgNbaIDnl/Pagina-De-Star-Coffee?node-id=0-1&t=LZXnrDs7g2UMLmXn-
+Dejar de hacer
+- Dejar todo el trabajo para los últimos días.
+- Trabajar sin consultar con los demás.
+- Complicarnos demasiado con detalles que no son tan importantes.
 
-Funcionalidades
-
-* Página principal.
-* Visualización de productos.
-* Detalles de cada producto.
-* Selección de cantidad de productos.
-* Carrito de compras.
-* Visualización del precio.
-* Interfaz de inicio de sesión.
-* Diseño enfocado en una experiencia sencilla para el usuario.
-
-Tecnologías
-
-* Figma
-* Wireframe.co
-
-Objetivo
-
-El objetivo de este proyecto es diseñar una pagina web para una cafeteria (Star Coffee), donde esta permita al usuario ver los distintos productos que estan disponibles, en esta pagina se presentan los productos de manera organizada para ofrecer una experiencia de navegacion sencilla y atractiva para el cliente.
-
-Autores
-
-* José Luis Fernández
-* Brayan Ariza Torrez
-* Diego Armando Ochoa
-
-Proyecto
-
-Este proyecto fue desarrollado como parte de las actividades académicas de Ingeniería de Sistemas.
+Conclusión
+En este sprint logramos avanzar con el diseño de la página de Coffee Star y aprendimos que es 
+importante organizarnos y comunicarnos mejor. Para el próximo sprint queremos seguir mejorando el 
+diseño, repartir mejor las tareas y aprovechar más el tiempo.
