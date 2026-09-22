@@ -1,0 +1,32 @@
+Retrospectiva – Proyecto Coffee Star
+
+Comenzar a hacer
+- Organizarnos mejor antes de empezar cada parte del diseño.
+- Tener más claras las ideas de lo que queremos poner en la página.
+- Repartir mejor las tareas entre todos.
+
+Hacer más
+- Probar más diseños y diferentes ideas para la página.
+- Comunicarnos más entre nosotros para saber cómo va el trabajo.
+- Revisar más seguido cómo está quedando la página.
+
+Continuar haciendo
+- Seguir aportando ideas entre todos.
+- Ayudarnos cuando alguno tenga problemas con el diseño.
+- Mantener el buen trabajo en equipo.
+- Seguir buscando que la página de Coffee Star se vea llamativa y fácil de usar.
+
+Hacer menos
+- Cambiar tanto de idea cuando ya tenemos un diseño avanzado.
+- Dejar algunas cosas para última hora.
+- Hacer cambios innecesarios que terminan atrasando el trabajo.
+
+Dejar de hacer
+- Dejar todo el trabajo para los últimos días.
+- Trabajar sin consultar con los demás.
+- Complicarnos demasiado con detalles que no son tan importantes.
+
+Conclusión
+En este sprint logramos avanzar con el diseño de la página de Coffee Star y aprendimos que es 
+importante organizarnos y comunicarnos mejor. Para el próximo sprint queremos seguir mejorando el 
+diseño, repartir mejor las tareas y aprovechar más el tiempo.
