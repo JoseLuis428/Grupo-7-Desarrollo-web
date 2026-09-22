@@ -2,40 +2,45 @@ Star Coffee
 
 Descripción
 
-Star Coffee es un proyecto de diseño de una página web para una cafetería. El proyecto presenta una interfaz moderna y sencilla para que los usuarios puedan visualizar los productos, consultar sus detalles y realizar compras.
+Star Coffee es un proyecto de diseño y desarrollo de una página web para una cafetería. La aplicación 
+presenta una interfaz moderna y sencilla para que los usuarios puedan visualizar los productos, 
+consultar sus detalles y realizar compras.
 
 Diseño
 
-El diseño de la página fue realizado en Figma.
+El diseño de la página fue realizado en Figma, y sirvió de base para la maquetación y el desarrollo 
+posterior.
 
-Link de la pagina: https://www.figma.com/design/DWECRU2w0VWDukgNbaIDnl/Pagina-De-Star-Coffee?node-id=0-1&t=LZXnrDs7g2UMLmXn-
+Estado actual del proyecto
 
-Funcionalidades
+Sprint 1: definición del diseño en Figma y planificación inicial del proyecto.
 
-* Página principal.
-* Visualización de productos.
-* Detalles de cada producto.
-* Selección de cantidad de productos.
-* Carrito de compras.
-* Visualización del precio.
-* Interfaz de inicio de sesión.
-* Diseño enfocado en una experiencia sencilla para el usuario.
+Sprint 2: maquetación estática en HTML y CSS de las páginas principales (inicio, home, detalle de 
+producto, carrito y registro), tomando como base el diseño de Figma.
 
-Tecnologías
+Sprint 3: migración del proyecto a Node.js con Express y el motor de templates EJS. Se organizaron las 
+vistas por sección, se crearon componentes reutilizables (parciales), se agregó la página Home dinámica, 
+formularios para crear y editar productos, el rediseño del detalle de producto y el carrito, y se 
+implementó el inicio de sesión que protege el acceso a la aplicación.
 
-* Figma
-* Wireframe.co
+Cómo ejecutarlo
 
-Objetivo
+Se necesita tener Node.js instalado.
 
-El objetivo de este proyecto es diseñar una pagina web para una cafeteria (Star Coffee), donde esta permita al usuario ver los distintos productos que estan disponibles, en esta pagina se presentan los productos de manera organizada para ofrecer una experiencia de navegacion sencilla y atractiva para el cliente.
+npm install
+npm start
 
-Autores
+Luego abrir http://localhost:3000 en el navegador.
 
-* José Luis Fernández
-* Brayan Ariza Torrez
-* Diego Armando Ochoa
+Qué se busca lograr
 
-Proyecto
+- Conectar la aplicación a una base de datos real, en lugar de guardar los productos y el carrito en 
+  memoria.
+- Implementar el registro y la autenticación de usuarios reales.
+- Agregar la funcionalidad de pago para completar el proceso de compra.
+- Seguir mejorando el diseño y la experiencia de usuario en cada sprint.
 
-Este proyecto fue desarrollado como parte de las actividades académicas de Ingeniería de Sistemas.
+Documentación ágil
+
+- retro.md: retrospectivas del equipo.
+- daily.md: seguimiento de las reuniones diarias.
