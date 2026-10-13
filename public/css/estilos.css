@@ -1,4 +1,3 @@
-/* ===== General ===== */
 * { box-sizing: border-box; }
 
 body {
@@ -21,7 +20,6 @@ main {
   padding: 30px 20px;
 }
 
-/* ===== Header y footer (parciales) ===== */
 header {
   background-color: #4a2c17;
   padding: 15px 40px;
@@ -45,7 +43,6 @@ footer {
 
 footer p { margin: 0; }
 
-/* ===== Botones ===== */
 .boton, .boton-claro, .boton-rojo {
   display: inline-block;
   padding: 10px 16px;
@@ -66,11 +63,9 @@ footer p { margin: 0; }
 
 .precio { color: #a0522d; font-weight: bold; font-size: 18px; }
 
-/* ===== Lista de productos ===== */
 .titulo-fila { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
 .titulo-fila h2 { margin: 0; }
 
-/* 4 columnas iguales para que las secciones queden simétricas */
 .grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -84,7 +79,7 @@ footer p { margin: 0; }
   border-radius: 12px;
   padding: 15px;
   display: flex;
-  flex-direction: column;   /* así todas las tarjetas quedan de la misma altura */
+  flex-direction: column;  
 }
 
 .tarjeta img { width: 100%; height: 160px; object-fit: cover; border-radius: 8px; }
@@ -93,7 +88,6 @@ footer p { margin: 0; }
 .tarjeta p.precio { font-size: 18px; color: #a0522d; margin-top: auto; }
 .tarjeta form { margin-top: 10px; }
 
-/* ===== Detalle del producto ===== */
 .detalle {
   display: flex;
   gap: 50px;
@@ -204,7 +198,6 @@ footer p { margin: 0; }
 .pago-seguro { text-align: center; font-size: 12px; color: #888; margin-top: 12px; }
 .fila-acciones { text-align: center; }
 
-/* ===== Recomendaciones (detalle y carrito) ===== */
 .recomendaciones { margin-top: 35px; }
 
 .recomendaciones h4 {
@@ -220,7 +213,6 @@ footer p { margin: 0; }
 .rec-item img { width: 100%; height: 110px; object-fit: cover; border-radius: 8px; }
 .rec-item p { text-align: center; font-size: 13px; margin-top: 6px; color: #2b1a10; }
 
-/* ===== Formularios ===== */
 .formulario {
   max-width: 500px;
   margin: 0 auto;
@@ -254,7 +246,6 @@ footer p { margin: 0; }
   font-size: 14px;
 }
 
-/* ===== Carrito ===== */
 .titulo-carrito { margin: 0 0 25px 0; }
 
 .carrito-vacio {
@@ -379,7 +370,6 @@ footer p { margin: 0; }
   font-family: inherit;
 }
 
-/* ===== Home ===== */
 main > h2 { margin-top: 30px; }
 
 .banner {
@@ -395,7 +385,6 @@ main > h2 { margin-top: 30px; }
 .banner > div { flex: 1; min-width: 250px; }
 .banner img { flex: 1; min-width: 250px; height: 260px; object-fit: cover; border-radius: 12px; }
 
-/* 4 categorías del mismo ancho */
 .categorias {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -420,7 +409,6 @@ main > h2 { margin-top: 30px; }
 .precio-promo { font-size: 22px; font-weight: bold; }
 .promo .boton-claro { margin-top: 10px; }
 
-/* ===== Footer con datos de contacto ===== */
 .footer-info {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -430,7 +418,6 @@ main > h2 { margin-top: 30px; }
   margin: 0 auto 15px auto;
 }
 
-/* ===== Pantallas pequeñas ===== */
 @media (max-width: 900px) {
   .grid, .categorias, .footer-info { grid-template-columns: repeat(2, 1fr); }
   .lista-recomendaciones { flex-wrap: wrap; }
@@ -443,9 +430,61 @@ main > h2 { margin-top: 30px; }
   nav a { margin: 0 10px; }
 }
 
-/* Botones "Ver" y "Editar" dentro de la tarjeta de la lista */
-.acciones-tarjeta { display: flex; gap: 8px; margin-top: 10px; }
-.acciones-tarjeta .boton-claro { flex: 1; }
+.acciones-tarjeta { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin-top: 10px; }
+.acciones-tarjeta form { display: flex; margin: 0; }   /* anula el margin-top de ".tarjeta form" */
+.acciones-tarjeta .boton-claro, .acciones-tarjeta .boton-rojo {
+  width: 100%;
+  padding: 10px 4px;
+  font-size: 13px;
+  line-height: 1.2;
+  box-sizing: border-box;
+}
 
-/* Encabezado sin menú (login y registro): el logo queda centrado */
 header.sin-nav { justify-content: center; }
+
+.acciones-detalle { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 15px; }
+.acciones-detalle form { display: flex; margin: 0; }
+.acciones-detalle .boton-claro, .acciones-detalle .boton-rojo { width: 100%; line-height: 1.2; box-sizing: border-box; }
+
+.formulario-producto { max-width: 640px; padding: 30px; box-shadow: 0 2px 12px rgba(74, 44, 23, 0.08); }
+.formulario-producto h2 { margin: 0 0 4px 0; color: #2b1a10; }
+.formulario-producto .subtitulo { margin: 0 0 18px 0; color: #777; font-size: 14px; }
+.formulario-producto textarea { resize: vertical; }
+
+.fila-campos { display: flex; gap: 15px; }
+.fila-campos .campo { flex: 1; min-width: 0; }
+
+.formulario select {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  font-family: inherit;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: white;
+}
+
+.formulario input:focus, .formulario textarea:focus, .formulario select:focus {
+  outline: none;
+  border-color: #4a2c17;
+  box-shadow: 0 0 0 3px rgba(74, 44, 23, 0.15);
+}
+
+.campo-precio { position: relative; }
+.campo-precio span { position: absolute; left: 12px; top: 10px; color: #777; }
+.campo-precio input { padding-left: 26px; }
+
+.ayuda { font-size: 12px; color: #888; margin: 5px 0 0 0; }
+.vista-previa { display: none; width: 100%; height: 150px; object-fit: cover; border: 1px solid #ddd; border-radius: 8px; margin-top: 10px; }
+
+.formulario .botones-form { display: flex; gap: 12px; margin-top: 25px; }
+.formulario .botones-form .boton, .formulario .botones-form .boton-claro {
+  flex: 1 1 0;
+  width: auto;
+  margin-top: 0;
+  box-sizing: border-box;
+}
+
+@media (max-width: 600px) {
+  .fila-campos { flex-direction: column; gap: 0; }
+}

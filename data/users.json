@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "firstName": "Admin",
+    "lastName": "Star Coffee",
+    "email": "admin@starcoffee.com",
+    "password": "admin123",
+    "category": "admin"
+  },
+  {
+    "id": 2,
+    "firstName": "Laura",
+    "lastName": "Gómez",
+    "email": "laura@gmail.com",
+    "password": "laura123",
+    "category": "customer"
+  },
+  {
+    "id": 3,
+    "firstName": "Carlos",
+    "lastName": "Rojas",
+    "email": "carlos@gmail.com",
+    "password": "carlos123",
+    "category": "customer"
+  },
+  {
+    "id": 4,
+    "firstName": "Valentina",
+    "lastName": "Pérez",
+    "email": "valentina@gmail.com",
+    "password": "valen123",
+    "category": "customer"
+  },
+  {
+    "id": 5,
+    "firstName": "Andrés",
+    "lastName": "Torres",
+    "email": "andres@gmail.com",
+    "password": "andres123",
+    "category": "customer"
+  },
+  {
+    "id": 6,
+    "firstName": "Jose Luis",
+    "lastName": "Fernandez",
+    "email": "joseluisfernandezjlf18@gmail.com",
+    "password": "12345678",
+    "category": "customer"
+  }
+]
