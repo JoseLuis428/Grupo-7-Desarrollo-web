@@ -1,0 +1,80 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+
+<a href="/products/<%= producto.id %>" class="volver">&#10094; Volver</a>
+
+<div class="formulario formulario-producto">
+  <h2>Editar producto</h2>
+  <p class="subtitulo">Modifica los datos y guarda los cambios.</p>
+
+  <% if (error) { %>
+    <p class="error"><%= error %></p>
+  <% } %>
+
+  <form action="/products/<%= producto.id %>?_method=PUT" method="POST">
+    <div class="campo">
+      <label for="name">Nombre</label>
+      <input type="text" id="name" name="name" placeholder="Ej: Café Moka" value="<%= producto.name %>">
+    </div>
+
+    <div class="campo">
+      <label for="description">Descripción</label>
+      <textarea id="description" name="description" rows="3" placeholder="Cuéntanos de qué se trata el producto"><%= producto.description %></textarea>
+    </div>
+
+    <div class="fila-campos">
+      <div class="campo">
+        <label for="price">Precio</label>
+        <div class="campo-precio">
+          <span>$</span>
+          <input type="number" id="price" name="price" min="0" placeholder="6000" value="<%= producto.price %>">
+        </div>
+      </div>
+
+      <div class="campo">
+        <label for="category">Categoría</label>
+        <select id="category" name="category">
+          <% [['cafes', 'Cafés'], ['frias', 'Bebidas frías'], ['reposteria', 'Repostería'], ['alimentos', 'Alimentos']].forEach(function (c) { %>
+            <option value="<%= c[0] %>" <%= producto.category === c[0] ? 'selected' : '' %>><%= c[1] %></option>
+          <% }); %>
+        </select>
+      </div>
+    </div>
+
+    <div class="campo">
+      <label for="sizes">Tamaños (opcional)</label>
+      <input type="text" id="sizes" name="sizes" placeholder="Pequeño, Mediano, Grande"
+             value="<%= Array.isArray(producto.sizes) ? producto.sizes.join(', ') : (producto.sizes || '') %>">
+      <p class="ayuda">Sepáralos con comas. Si lo dejas vacío se usan Pequeño, Mediano y Grande.</p>
+    </div>
+
+    <div class="campo">
+      <label for="image">URL de la imagen (opcional)</label>
+      <input type="text" id="image" name="image" placeholder="https://..." value="<%= producto.image %>">
+      <img id="vista-previa" class="vista-previa" alt="Vista previa de la imagen">
+    </div>
+
+    <div class="botones-form">
+      <a href="/products/<%= producto.id %>" class="boton-claro">Cancelar</a>
+      <button type="submit" class="boton">Guardar cambios</button>
+    </div>
+  </form>
+</div>
+
+<script>
+  // Vista previa de la imagen: aparece cuando la URL es válida
+  const campoImagen = document.getElementById('image');
+  const vistaPrevia = document.getElementById('vista-previa');
+
+  vistaPrevia.onload = function () { vistaPrevia.style.display = 'block'; };
+  vistaPrevia.onerror = function () { vistaPrevia.style.display = 'none'; };
+
+  function actualizarVista() {
+    const url = campoImagen.value.trim();
+    if (url) vistaPrevia.src = url; else vistaPrevia.style.display = 'none';
+  }
+  campoImagen.addEventListener('input', actualizarVista);
+  actualizarVista();
+</script>
+
+<%- include('../partials/footer') %>

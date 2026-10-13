@@ -1,7 +1,7 @@
 <%- include('../partials/head') %>
 <%- include('../partials/header') %>
 
-<a href="/productos" class="volver">&#10094; Volver</a>
+<a href="/products" class="volver">&#10094; Volver</a>
 
 <div class="detalle">
 
@@ -9,14 +9,14 @@
   <div class="detalle-izq">
 
     <div class="imagen-principal">
-      <img id="imagen-grande" src="<%= producto.imagen %>" alt="<%= producto.nombre %>">
+      <img id="imagen-grande" src="<%= producto.image %>" alt="<%= producto.name %>">
     </div>
 
     <div class="miniaturas">
-      <img src="<%= producto.imagen %>" alt="Miniatura de <%= producto.nombre %>"
+      <img src="<%= producto.image %>" alt="Miniatura de <%= producto.name %>"
            class="activa" onclick="cambiarImagen(this)">
       <% relacionados.slice(0, 2).forEach(function (r) { %>
-        <img src="<%= r.imagen %>" alt="Miniatura de <%= r.nombre %>" onclick="cambiarImagen(this)">
+        <img src="<%= r.image %>" alt="Miniatura de <%= r.name %>" onclick="cambiarImagen(this)">
       <% }); %>
     </div>
 
@@ -26,12 +26,12 @@
     </div>
 
     <div class="tab-contenido" id="tab-descripcion">
-      <%= producto.descripcion %>
+      <%= producto.description %>
       Preparado con granos seleccionados de la mejor calidad, ideal para acompañar tu día con energía y bienestar.
     </div>
 
     <div class="tab-contenido oculto" id="tab-informacion">
-      Categoría: <%= producto.categoria || 'general' %><br>
+      Categoría: <%= producto.category || 'general' %><br>
       Presentación: pequeño (180 ml), mediano (250 ml) y grande (350 ml).<br>
       Disponible para consumo en el local o para llevar.
     </div>
@@ -41,23 +41,26 @@
   <!-- ---------- Columna derecha: información y compra ---------- -->
   <div class="detalle-der">
 
-    <h1><%= producto.nombre %></h1>
+    <h1><%= producto.name %></h1>
 
     <div class="rating">&#9733;&#9733;&#9733;&#9733;&#9733; <span>4.8 (125 reseñas)</span></div>
 
-    <p class="precio precio-grande"><%= formatoPrecio(producto.precio) %></p>
+    <p class="precio precio-grande"><%= formatoPrecio(producto.price) %></p>
 
-    <p class="descripcion"><%= producto.descripcion %></p>
+    <p class="descripcion"><%= producto.description %></p>
 
     <form action="/carrito/agregar/<%= producto.id %>" method="POST">
 
       <h4>Tamaño</h4>
+      <% const tamanos = producto.sizes || ['Mediano'];
+         const ml = { 'Pequeño': '180 ml', 'Mediano': '250 ml', 'Grande': '350 ml' };
+         const elegido = tamanos.indexOf('Mediano') !== -1 ? 'Mediano' : tamanos[0]; %>
       <div class="tamanos">
-        <div class="tamano" onclick="elegirTamano(this, 'Pequeño')">Pequeño<br>180 ml</div>
-        <div class="tamano activo" onclick="elegirTamano(this, 'Mediano')">Mediano<br>250 ml</div>
-        <div class="tamano" onclick="elegirTamano(this, 'Grande')">Grande<br>350 ml</div>
+        <% tamanos.forEach(function (t) { %>
+          <div class="tamano <%= t === elegido ? 'activo' : '' %>" onclick="elegirTamano(this, '<%= t %>')"><%= t %><% if (ml[t]) { %><br><%= ml[t] %><% } %></div>
+        <% }); %>
       </div>
-      <input type="hidden" name="tamano" id="tamano" value="Mediano">
+      <input type="hidden" name="tamano" id="tamano" value="<%= elegido %>">
 
       <h4>Cantidad</h4>
       <div class="cantidad-selector">
@@ -72,9 +75,13 @@
 
     <p class="pago-seguro">Pago 100% seguro</p>
 
-    <p class="fila-acciones">
-      <a href="/productos/<%= producto.id %>/editar" class="boton-claro">Editar producto</a>
-    </p>
+    <div class="acciones-detalle">
+      <a href="/products/<%= producto.id %>/edit" class="boton-claro">Editar producto</a>
+      <form action="/products/<%= producto.id %>?_method=DELETE" method="POST"
+            onsubmit="return confirm('¿Eliminar este producto?')">
+        <button type="submit" class="boton-rojo">Eliminar producto</button>
+      </form>
+    </div>
 
   </div>
 
@@ -86,9 +93,9 @@
     <h4>Recomendaciones para ti</h4>
     <div class="lista-recomendaciones">
       <% relacionados.forEach(function (r) { %>
-        <a href="/productos/<%= r.id %>" class="rec-item">
-          <img src="<%= r.imagen %>" alt="<%= r.nombre %>">
-          <p><%= r.nombre %></p>
+        <a href="/products/<%= r.id %>" class="rec-item">
+          <img src="<%= r.image %>" alt="<%= r.name %>">
+          <p><%= r.name %></p>
         </a>
       <% }); %>
     </div>

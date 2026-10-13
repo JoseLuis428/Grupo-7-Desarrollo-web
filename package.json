@@ -1,13 +1,14 @@
 {
   "name": "starcoffee",
   "version": "1.0.0",
-  "description": "Star Coffee - Node.js + Express + EJS (Sprint 3)",
+  "description": "Star Coffee - Node.js + Express + EJS (Sprint 4)",
   "main": "app.js",
   "scripts": {
     "start": "node app.js"
   },
   "dependencies": {
     "ejs": "^3.1.10",
-    "express": "^4.21.2"
+    "express": "^4.21.2",
+    "method-override": "^3.0.0"
   }
 }
