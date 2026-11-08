@@ -1,0 +1,21 @@
+<body>
+
+<%
+  var verNav = (typeof mostrarNav === 'undefined') ? true : mostrarNav;
+%>
+
+<header class="<%= verNav ? '' : 'sin-nav' %>">
+  <a href="<%= verNav ? '/' : '/login' %>" class="logo">&#9733; Star Coffee</a>
+
+  <% if (verNav) { %>
+    <nav>
+      <a href="/">Inicio</a>
+      <a href="/products">Menú</a>
+      <a href="/carrito">Carrito</a>
+      <a href="/perfil">Mi perfil</a>
+      <a href="/salir">Cerrar sesión</a>
+    </nav>
+  <% } %>
+</header>
+
+<main>

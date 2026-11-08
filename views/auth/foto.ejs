@@ -1,0 +1,39 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+
+<div class="perfil-pagina perfil-foto-pagina">
+
+  <section class="perfil-tarjeta formulario centrado">
+    <h2>Foto de perfil</h2>
+    <p class="subtitulo">Esta imagen se muestra en tu perfil.</p>
+
+    <% if (error) { %><p class="error"><%= error %></p><% } %>
+    <% if (exito) { %><p class="exito"><%= exito %></p><% } %>
+
+    <div class="foto-perfil">
+      <% if (perfil.photo) { %>
+        <img src="/uploads/perfiles/<%= perfil.photo %>" alt="Foto de perfil de <%= perfil.firstName %>">
+      <% } else { %>
+        <div class="foto-inicial"><%= perfil.firstName.charAt(0).toUpperCase() %></div>
+      <% } %>
+    </div>
+
+    <form action="/perfil/foto" method="POST" enctype="multipart/form-data">
+      <label for="foto">Elige una imagen (JPG, PNG, WEBP o GIF, máximo 2 MB)</label>
+      <input type="file" id="foto" name="foto" accept="image/jpeg,image/png,image/webp,image/gif" required>
+
+      <button type="submit" class="boton">Subir foto</button>
+    </form>
+
+    <% if (perfil.photo) { %>
+      <form action="/perfil/foto?_method=DELETE" method="POST">
+        <button type="submit" class="boton-rojo boton-ancho foto-quitar">Quitar foto</button>
+      </form>
+    <% } %>
+
+    <p><a href="/perfil">&larr; Volver a mi perfil</a></p>
+  </section>
+
+</div>
+
+<%- include('../partials/footer') %>

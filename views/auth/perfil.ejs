@@ -1,0 +1,88 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+
+<div class="perfil-pagina">
+
+  <% if (error) { %><p class="error"><%= error %></p><% } %>
+  <% if (exito) { %><p class="exito"><%= exito %></p><% } %>
+
+  <section class="perfil-tarjeta perfil-resumen">
+    <div class="foto-perfil">
+      <% if (perfil.photo) { %>
+        <img src="/uploads/perfiles/<%= perfil.photo %>" alt="Foto de perfil de <%= perfil.firstName %>">
+      <% } else { %>
+        <div class="foto-inicial"><%= perfil.firstName.charAt(0).toUpperCase() %></div>
+      <% } %>
+    </div>
+
+    <div class="resumen-info">
+      <h2><%= perfil.firstName %> <%= perfil.lastName %></h2>
+      <p class="resumen-correo"><%= perfil.email %></p>
+      <span class="etiqueta-cuenta"><%= perfil.category === 'admin' ? 'Administrador' : 'Cliente' %></span>
+      <p><a href="/perfil/foto" class="boton-claro">Cambiar foto</a></p>
+    </div>
+  </section>
+
+  <div class="perfil-columnas">
+
+    <section id="tarjeta-datos" class="perfil-tarjeta formulario tarjeta-datos <%= locals.editando ? 'editando' : '' %>">
+      <h3>Mis datos</h3>
+      <p class="subtitulo">Tus datos de cuenta.</p>
+      <form id="form-datos" action="/perfil?_method=PUT" method="POST">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="nombre" value="<%= perfil.firstName %>" <%= locals.editando ? '' : 'readonly' %>>
+
+        <label for="apellidos">Apellidos</label>
+        <input type="text" id="apellidos" name="apellidos" value="<%= perfil.lastName %>" <%= locals.editando ? '' : 'readonly' %>>
+
+        <label for="correo">Correo</label>
+        <input type="email" id="correo" value="<%= perfil.email %>" readonly>
+
+        <div class="fila-botones">
+          <button type="button" id="btn-editar" class="boton solo-ver">Editar datos</button>
+          <button type="submit" class="boton solo-edicion">Guardar cambios</button>
+          <button type="button" id="btn-cancelar" class="boton-claro solo-edicion">Cancelar</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="perfil-tarjeta formulario">
+      <h3>Cambiar contraseña</h3>
+      <p class="subtitulo">Mínimo 6 caracteres.</p>
+      <form action="/perfil/contrasena?_method=PUT" method="POST">
+        <label for="actual">Contraseña actual</label>
+        <input type="password" id="actual" name="actual">
+
+        <label for="nueva">Contraseña nueva</label>
+        <input type="password" id="nueva" name="nueva">
+
+        <label for="confirmar">Confirmar contraseña nueva</label>
+        <input type="password" id="confirmar" name="confirmar">
+
+        <button type="submit" class="boton">Cambiar contraseña</button>
+      </form>
+    </section>
+
+  </div>
+
+  <p class="perfil-salir"><a href="/salir">Cerrar sesión</a></p>
+</div>
+
+<script>
+  var formDatos = document.getElementById('form-datos');
+  var tarjetaDatos = document.getElementById('tarjeta-datos');
+
+  function modoEdicion(activo) {
+    tarjetaDatos.classList.toggle('editando', activo);
+    formDatos.querySelectorAll('input[name]').forEach(function (campo) { campo.readOnly = !activo; });
+    if (activo) formDatos.querySelector('input[name]').focus();
+  }
+
+  document.getElementById('btn-editar').addEventListener('click', function () { modoEdicion(true); });
+  document.getElementById('btn-cancelar').addEventListener('click', function () {
+    formDatos.reset();
+    modoEdicion(false);
+  });
+</script>
+
+<%- include('../partials/footer') %>
