@@ -1,0 +1,31 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+
+<div class="titulo-fila">
+  <h2>Nuestros productos</h2>
+  <a href="/products/create" class="boton">+ Nuevo producto</a>
+</div>
+
+<% if (productos.length === 0) { %>
+  <p>No hay productos todavía.</p>
+<% } %>
+
+<div class="grid">
+  <% productos.forEach(function (p) { %>
+    <div class="tarjeta">
+      <img src="<%= p.image %>" alt="<%= p.name %>">
+      <h3><%= p.name %></h3>
+      <p><%= p.description %></p>
+      <p class="precio"><%= formatoPrecio(p.price) %></p>
+      <div class="acciones-tarjeta">
+        <a href="/products/<%= p.id %>" class="boton-claro">Ver</a>
+        <a href="/products/<%= p.id %>/edit" class="boton-claro">Editar</a>
+        <form action="/products/<%= p.id %>?_method=DELETE" method="POST" onsubmit="return confirm('¿Eliminar este producto?')">
+          <button type="submit" class="boton-rojo">Eliminar</button>
+        </form>
+      </div>
+    </div>
+  <% }); %>
+</div>
+
+<%- include('../partials/footer') %>

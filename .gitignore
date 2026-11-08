@@ -1,0 +1,4 @@
+node_modules/
+
+# fotos de perfil subidas por los usuarios
+public/uploads/
