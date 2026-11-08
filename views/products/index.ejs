@@ -1,0 +1,38 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+
+<div class="titulo-fila">
+  <h2>Nuestros productos</h2>
+  <a href="/products/create" class="boton">+ Nuevo producto</a>
+</div>
+
+<form action="/products" method="GET" class="buscador">
+  <% if (categoria) { %><input type="hidden" name="category" value="<%= categoria %>"><% } %>
+  <input type="text" name="q" value="<%= busqueda %>" placeholder="Buscar productos por nombre o descripción">
+  <button type="submit" class="boton">Buscar</button>
+  <% if (busqueda || categoria) { %><a href="/products" class="boton-claro">Limpiar</a><% } %>
+</form>
+
+<% if (productos.length === 0) { %>
+  <p><%= (busqueda || categoria) ? 'No encontramos productos con ese criterio.' : 'No hay productos todavía.' %></p>
+<% } %>
+
+<div class="grid">
+  <% productos.forEach(function (p) { %>
+    <div class="tarjeta">
+      <img src="<%= p.image %>" alt="<%= p.name %>">
+      <h3><%= p.name %></h3>
+      <p><%= p.description %></p>
+      <p class="precio"><%= formatoPrecio(p.price) %></p>
+      <div class="acciones-tarjeta">
+        <a href="/products/<%= p.id %>" class="boton-claro">Ver</a>
+        <a href="/products/<%= p.id %>/edit" class="boton-claro">Editar</a>
+        <form action="/products/<%= p.id %>?_method=DELETE" method="POST" onsubmit="return confirm('¿Eliminar este producto?')">
+          <button type="submit" class="boton-rojo">Eliminar</button>
+        </form>
+      </div>
+    </div>
+  <% }); %>
+</div>
+
+<%- include('../partials/footer') %>
