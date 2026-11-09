@@ -2,10 +2,6 @@
 
 Aplicación web de una cafetería hecha con **Node.js + Express** y el motor de templates **EJS** (Sprint 4 a 6).
 
-## Tablero de trabajo
-
-**Enlace al tablero:** [PEGAR AQUÍ EL ENLACE DE TU TABLERO (Trello / Jira / GitHub Projects)](https://)
-
 ## Documentación ágil
 
 * [retro.md](./retro.md) – Retrospectiva con la dinámica de la estrella de mar.
