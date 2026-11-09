@@ -1,0 +1,142 @@
+[
+  {
+    "id": 1,
+    "name": "Café Americano",
+    "description": "Café 100% colombiano, suave y balanceado, perfecto para cualquier momento del día.",
+    "image": "https://images.unsplash.com/photo-1509785307050-d4066910ec1e?w=600",
+    "category": "cafes",
+    "sizes": [
+      "Pequeño",
+      "Mediano",
+      "Grande"
+    ],
+    "price": 6000,
+    "section": "vendido"
+  },
+  {
+    "id": 2,
+    "name": "Capuchino",
+    "description": "Café con leche espumosa y un toque de sabor.",
+    "image": "https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=600",
+    "category": "cafes",
+    "sizes": [
+      "Pequeño",
+      "Mediano",
+      "Grande"
+    ],
+    "price": 6000,
+    "section": "recomendado"
+  },
+  {
+    "id": 3,
+    "name": "Café Espresso",
+    "description": "Café concentrado de sabor intenso y aroma profundo.",
+    "image": "https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=600",
+    "category": "cafes",
+    "sizes": [
+      "Pequeño",
+      "Mediano",
+      "Grande"
+    ],
+    "price": 5000,
+    "section": "vendido"
+  },
+  {
+    "id": 4,
+    "name": "Latte",
+    "description": "Espresso con abundante leche vaporizada, suave y cremoso.",
+    "image": "https://images.unsplash.com/photo-1561047029-3000c68339ca?w=600",
+    "category": "cafes",
+    "sizes": [
+      "Pequeño",
+      "Mediano",
+      "Grande"
+    ],
+    "price": 7000,
+    "section": "vendido"
+  },
+  {
+    "id": 5,
+    "name": "Café Colombiano",
+    "description": "Café de origen colombiano con notas achocolatadas.",
+    "image": "https://images.unsplash.com/photo-1517701604599-bb29b565090c?w=600",
+    "category": "cafes",
+    "sizes": [
+      "Pequeño",
+      "Mediano",
+      "Grande"
+    ],
+    "price": 6500,
+    "section": "recomendado"
+  },
+  {
+    "id": 6,
+    "name": "Torta de Chocolate",
+    "description": "Fresas y chocolate.",
+    "image": "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600",
+    "category": "reposteria",
+    "sizes": [
+      "Pequeño",
+      "Mediano",
+      "Grande"
+    ],
+    "price": 9500,
+    "section": "recomendado"
+  },
+  {
+    "id": 7,
+    "name": "Sándwich Mixto",
+    "description": "Sabores inolvidables.",
+    "image": "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=600",
+    "category": "alimentos",
+    "sizes": [
+      "Pequeño",
+      "Mediano",
+      "Grande"
+    ],
+    "price": 16500,
+    "section": "recomendado"
+  },
+  {
+    "id": 8,
+    "name": "Croissant de Almendras",
+    "description": "Clásico y cremoso.",
+    "image": "https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=600",
+    "category": "reposteria",
+    "sizes": [
+      "Pequeño",
+      "Mediano",
+      "Grande"
+    ],
+    "price": 7900,
+    "section": "vendido"
+  },
+  {
+    "id": 9,
+    "name": "Brownie de Chocolate",
+    "description": "Cremoso y jugoso.",
+    "image": "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=600",
+    "category": "reposteria",
+    "sizes": [
+      "Pequeño",
+      "Mediano",
+      "Grande"
+    ],
+    "price": 8900,
+    "section": ""
+  },
+  {
+    "id": 10,
+    "name": "Frappé de Fresa",
+    "description": "Con chips explosivos.",
+    "image": "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=600",
+    "category": "frias",
+    "sizes": [
+      "Pequeño",
+      "Mediano",
+      "Grande"
+    ],
+    "price": 11900,
+    "section": ""
+  }
+]

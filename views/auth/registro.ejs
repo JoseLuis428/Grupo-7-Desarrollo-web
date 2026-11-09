@@ -1,0 +1,38 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header', { mostrarNav: false }) %>
+
+<div class="formulario centrado">
+  <h2>Crea tu cuenta de Star Coffee</h2>
+
+  <form action="/registro" method="POST" enctype="multipart/form-data" novalidate data-validar>
+    <label for="nombre">Nombre</label>
+    <input type="text" id="nombre" name="nombre" data-regla="nombre" value="<%= viejo.nombre || '' %>" class="<%= mensajeError(errores, 'nombre') ? 'invalido' : '' %>">
+    <small class="error-campo" data-error-de="nombre"><%= mensajeError(errores, 'nombre') %></small>
+
+    <label for="apellidos">Apellidos</label>
+    <input type="text" id="apellidos" name="apellidos" data-regla="apellidos" value="<%= viejo.apellidos || '' %>" class="<%= mensajeError(errores, 'apellidos') ? 'invalido' : '' %>">
+    <small class="error-campo" data-error-de="apellidos"><%= mensajeError(errores, 'apellidos') %></small>
+
+    <label for="correo">Correo electrónico</label>
+    <input type="text" id="correo" name="correo" data-regla="correo" value="<%= viejo.correo || '' %>" class="<%= mensajeError(errores, 'correo') ? 'invalido' : '' %>">
+    <small class="error-campo" data-error-de="correo"><%= mensajeError(errores, 'correo') %></small>
+
+    <label for="contrasena">Contraseña</label>
+    <input type="password" id="contrasena" name="contrasena" data-regla="contrasena-registro" class="<%= mensajeError(errores, 'contrasena') ? 'invalido' : '' %>">
+    <small class="error-campo" data-error-de="contrasena"><%= mensajeError(errores, 'contrasena') %></small>
+
+    <label for="confirmar">Confirmar contraseña</label>
+    <input type="password" id="confirmar" name="confirmar" data-regla="confirmar" class="<%= mensajeError(errores, 'confirmar') ? 'invalido' : '' %>">
+    <small class="error-campo" data-error-de="confirmar"><%= mensajeError(errores, 'confirmar') %></small>
+
+    <label for="foto">Foto de perfil (opcional)</label>
+    <input type="file" id="foto" name="foto" accept=".jpg,.jpeg,.png,.gif" data-regla="imagen" class="<%= mensajeError(errores, 'foto') ? 'invalido' : '' %>">
+    <small class="error-campo" data-error-de="foto"><%= mensajeError(errores, 'foto') %></small>
+
+    <button type="submit" class="boton">Registrarme</button>
+  </form>
+
+  <p>¿Ya tienes una cuenta? <a href="/login"><b>Inicia sesión aquí</b></a></p>
+</div>
+
+<%- include('../partials/footer') %>

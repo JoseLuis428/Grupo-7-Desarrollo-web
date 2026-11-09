@@ -1,0 +1,83 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+
+<a href="/products/<%= producto.id %>" class="volver">&#10094; Volver</a>
+
+<div class="formulario formulario-producto">
+  <h2>Editar producto</h2>
+  <p class="subtitulo">Modifica los datos y guarda los cambios.</p>
+
+  <form action="/products/<%= producto.id %>?_method=PUT" method="POST" enctype="multipart/form-data" novalidate data-validar>
+    <div class="campo">
+      <label for="name">Nombre</label>
+      <input type="text" id="name" name="name" placeholder="Ej: Café Moka" data-regla="nombre-producto" value="<%= producto.name %>" class="<%= mensajeError(errores, 'name') ? 'invalido' : '' %>">
+      <small class="error-campo" data-error-de="name"><%= mensajeError(errores, 'name') %></small>
+    </div>
+
+    <div class="campo">
+      <label for="description">Descripción</label>
+      <textarea id="description" name="description" rows="3" placeholder="Cuéntanos de qué se trata el producto" data-regla="descripcion" class="<%= mensajeError(errores, 'description') ? 'invalido' : '' %>"><%= producto.description %></textarea>
+      <small class="error-campo" data-error-de="description"><%= mensajeError(errores, 'description') %></small>
+    </div>
+
+    <div class="fila-campos">
+      <div class="campo">
+        <label for="price">Precio</label>
+        <div class="campo-precio">
+          <span>$</span>
+          <input type="number" id="price" name="price" min="0" placeholder="6000" data-regla="precio" value="<%= producto.price %>" class="<%= mensajeError(errores, 'price') ? 'invalido' : '' %>">
+        </div>
+        <small class="error-campo" data-error-de="price"><%= mensajeError(errores, 'price') %></small>
+      </div>
+
+      <div class="campo">
+        <label for="category">Categoría</label>
+        <select id="category" name="category" class="<%= mensajeError(errores, 'category') ? 'invalido' : '' %>">
+          <% [['cafes', 'Cafés'], ['frias', 'Bebidas frías'], ['reposteria', 'Repostería'], ['alimentos', 'Alimentos']].forEach(function (c) { %>
+            <option value="<%= c[0] %>" <%= producto.category === c[0] ? 'selected' : '' %>><%= c[1] %></option>
+          <% }); %>
+        </select>
+        <small class="error-campo" data-error-de="category"><%= mensajeError(errores, 'category') %></small>
+      </div>
+    </div>
+
+    <div class="campo">
+      <label for="sizes">Tamaños (opcional)</label>
+      <input type="text" id="sizes" name="sizes" placeholder="Pequeño, Mediano, Grande" class="<%= mensajeError(errores, 'sizes') ? 'invalido' : '' %>"
+             value="<%= Array.isArray(producto.sizes) ? producto.sizes.join(', ') : (producto.sizes || '') %>">
+      <small class="error-campo" data-error-de="sizes"><%= mensajeError(errores, 'sizes') %></small>
+      <p class="ayuda">Sepáralos con comas. Si lo dejas vacío se usan Pequeño, Mediano y Grande.</p>
+    </div>
+
+    <div class="campo">
+      <label for="image">Imagen (opcional, si no eliges una se conserva la actual)</label>
+      <input type="file" id="image" name="image" accept=".jpg,.jpeg,.png,.gif" data-regla="imagen" class="<%= mensajeError(errores, 'image') ? 'invalido' : '' %>">
+      <small class="error-campo" data-error-de="image"><%= mensajeError(errores, 'image') %></small>
+      <img id="vista-previa" class="vista-previa" alt="Vista previa de la imagen" data-actual="<%= producto.image %>">
+    </div>
+
+    <div class="botones-form">
+      <a href="/products/<%= producto.id %>" class="boton-claro">Cancelar</a>
+      <button type="submit" class="boton">Guardar cambios</button>
+    </div>
+  </form>
+</div>
+
+<script>
+  const campoImagen = document.getElementById('image');
+  const vistaPrevia = document.getElementById('vista-previa');
+
+  vistaPrevia.onload = function () { vistaPrevia.style.display = 'block'; };
+  vistaPrevia.onerror = function () { vistaPrevia.style.display = 'none'; };
+
+  campoImagen.addEventListener('change', function () {
+    const archivo = campoImagen.files[0];
+    if (archivo) vistaPrevia.src = URL.createObjectURL(archivo);
+    else if (vistaPrevia.dataset.actual) vistaPrevia.src = vistaPrevia.dataset.actual;
+    else vistaPrevia.style.display = 'none';
+  });
+
+  if (vistaPrevia.dataset.actual) vistaPrevia.src = vistaPrevia.dataset.actual;
+</script>
+
+<%- include('../partials/footer') %>

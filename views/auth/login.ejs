@@ -1,0 +1,25 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header', { mostrarNav: false }) %>
+
+<div class="formulario centrado">
+  <h2>Inicio de sesión</h2>
+  <p>Inicia sesión con tu cuenta de <b>Star Coffee</b></p>
+
+  <form action="/login" method="POST" novalidate data-validar>
+    <label for="correo">Correo electrónico</label>
+    <input type="text" id="correo" name="correo" placeholder="@gmail.com" data-regla="correo" value="<%= viejo.correo || '' %>" class="<%= mensajeError(errores, 'correo') ? 'invalido' : '' %>">
+    <small class="error-campo" data-error-de="correo"><%= mensajeError(errores, 'correo') %></small>
+
+    <label for="contrasena">Contraseña</label>
+    <input type="password" id="contrasena" name="contrasena" placeholder="Introduce tu contraseña" data-regla="contrasena-login" class="<%= mensajeError(errores, 'contrasena') ? 'invalido' : '' %>">
+    <small class="error-campo" data-error-de="contrasena"><%= mensajeError(errores, 'contrasena') %></small>
+
+    <label class="recordar"><input type="checkbox" name="recordar" <%= viejo.recordar === 'on' ? 'checked' : '' %>> Recuérdame en este equipo</label>
+
+    <button type="submit" class="boton">Iniciar sesión</button>
+  </form>
+
+  <p>¿No tienes una cuenta? <a href="/registro"><b>Regístrate aquí</b></a></p>
+</div>
+
+<%- include('../partials/footer') %>
